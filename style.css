@@ -9,7 +9,7 @@ main {
   margin: 1em;
   padding: 1em;
   text-align: center;
-  background-color: whitesmoke;
+  background-color: beige;
 }
 
 h1 {
@@ -27,7 +27,7 @@ label {
   font-size: 18px;
 }
 
-button {
+#addBtn {
   margin: 2em;
   padding: 0.5em 1em;
   background-color: rgb(3, 143, 143);
@@ -38,10 +38,24 @@ button {
   text-transform: uppercase;
 }
 
-button:hover {
+#addBtn:hover {
   color: rgb(3, 143, 143);
   background-color: black;
   cursor: pointer;
+}
+
+ul {
+  text-align: left;
+  margin: 0px auto;
+  display: inline-block;
+}
+
+.striked {
+  text-decoration: line-through;
+}
+
+li button {
+  margin: 1em;
 }
 
 @media only screen and (min-width: 500px) {

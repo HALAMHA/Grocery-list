@@ -1,23 +1,31 @@
 document.querySelector('#addBtn').addEventListener('click', addToList);
-let shoppingList = [];
 
 function addToList () {
   const itemElem = document.querySelector('#item');
-  shoppingList.push(itemElem.value);
+  addItem(itemElem.value);
   itemElem.value = '';
-  showList();
 }
 
 
-function showList () {
+function addItem (itemValue) {
   const ulElem = document.querySelector('#itemsList');
-  ulElem.innerHTML = '';
+  const liElem = document.createElement('li');
+  liElem.textContent = itemValue;
+  liElem.addEventListener('click', strikeItem);
 
-  for (let i = 0; i < shoppingList.length; i++) {
-    const liElem = document.createElement('li');
-    liElem.textContent = shoppingList[i];
-    ulElem.appendChild(liElem);
-  }
+  const crossBtn = document.createElement('button');
+  crossBtn.textContent = 'X';
+  liElem.appendChild(crossBtn);
+  ulElem.appendChild(liElem);
+
+  crossBtn.addEventListener('click', () => {
+    ulElem.removeChild(liElem);
+  });
+}
+
+
+function strikeItem () {
+  this.classList.toggle('striked');
 }
 
 
