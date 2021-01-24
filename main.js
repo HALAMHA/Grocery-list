@@ -2,8 +2,13 @@ document.querySelector('#addBtn').addEventListener('click', addToList);
 
 function addToList () {
   const itemElem = document.querySelector('#item');
-  addItem(itemElem.value);
-  itemElem.value = '';
+  if (itemElem.value.trim() !== '') {
+    addItem(itemElem.value);
+    itemElem.value = '';
+    document.querySelector('#warning').classList.add('hide-warning');
+  } else {
+    document.querySelector('#warning').classList.remove('hide-warning');
+  }
 }
 
 
