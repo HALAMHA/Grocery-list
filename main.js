@@ -19,7 +19,7 @@ function addItem (itemValue) {
   liElem.addEventListener('click', strikeItem);
 
   const crossBtn = document.createElement('button');
-  crossBtn.textContent = 'X';
+  crossBtn.innerHTML = '&times';
   liElem.appendChild(crossBtn);
   ulElem.appendChild(liElem);
 
